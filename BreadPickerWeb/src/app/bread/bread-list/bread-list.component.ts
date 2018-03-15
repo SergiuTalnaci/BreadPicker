@@ -12,9 +12,6 @@ export class BreadListComponent implements OnInit {
   constructor(private breadService: BreadService) { }
   favoriteBreads: Observable<string[]>;
   ngOnInit() {
-    this.breadService.getFavoriteBreads().subscribe(x => {
-      console.log(x);
-    });
     this.favoriteBreads = this.breadService.getFavoriteBreads(); //Use async pipe in template to subscribe
   }
 

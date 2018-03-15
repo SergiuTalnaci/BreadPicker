@@ -31,7 +31,7 @@ namespace BreadPickerApi
 
 			app.UseCors(policy =>
 			{
-				policy.WithOrigins("http://localhost:4200");
+				policy.WithOrigins(Configuration.GetValue<string>("AngularAppUrl"));
 				policy.AllowAnyHeader();
 				policy.AllowAnyMethod();
 				policy.AllowCredentials();
