@@ -19,6 +19,12 @@ namespace BreadPickerApi
 		{
 		
 			services.AddMvc();
+			
+			services.Configure<IISOptions>(x =>
+			{
+				x.AutomaticAuthentication = false;
+				x.ForwardClientCertificate = false;
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
